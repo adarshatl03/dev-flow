@@ -3,7 +3,7 @@
 @plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark *, [data-theme="dark"] *));
 
 @theme {
   --color-primary-100: #fff1e6;
@@ -62,6 +62,12 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
@@ -555,15 +561,4 @@ code {
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
-}
-/*
-  ---break---
-*/
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
