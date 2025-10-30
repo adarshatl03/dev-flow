@@ -27,5 +27,12 @@
     "typescript.tsdk": "node_modules/typescript/lib",
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.next": true,
+        "**/.vscode": true,
+        "**/.git": true,
+        "next-env.d.ts": true,
     }
 }
