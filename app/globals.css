@@ -38,9 +38,6 @@
   --shadow-dark-100: 0px 2px 10px 0px rgba(46, 52, 56, 0.1);
   --shadow-dark-200: 2px 0px 20px 0px rgba(39, 36, 36, 0.04);
 
-  --background-image-auth-dark: url("/images/auth-dark.png");
-  --background-image-auth-light: url("/images/auth-light.png");
-
   --breakpoint-xs: 420px;
 
   --font-inter: var(--font-inter);
@@ -332,7 +329,14 @@
 @utility tab {
   @apply dark:bg-dark-400! bg-light-800! text-light-500! dark:data-[state=active]:bg-dark-300! data-[state=active]:bg-primary-100! data-[state=active]:text-primary-500! min-h-full!;
 }
-
+@layer utilities {
+  .bg-auth {
+    background-image: url("/images/auth-light.png");
+  }
+  .dark .bg-auth {
+    background-image: url("/images/auth-dark.png");
+  }
+}
 @layer base {
   :root {
     --radius: 0.5rem;
